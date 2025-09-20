@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import MUIComplaintForm from './pages/MUIComplaintForm'
 import SessionExpired from './pages/SessionExpired'
-import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
