@@ -3,9 +3,9 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import axios from 'axios'; 
 import { BASE_URL, COMPLAINT_URL, ISSUE_CATEGORY_URL } from '../Url';
-import photoIcon from '../../assets/images/photoIcon.svg';
-import deleteFileIcon from '../../assets/images/deleteFileIcon.svg';
-import uploadButtonIcon from '../../assets/images/uploadButtonIcon.svg';
+import photoIcon from '../assets/images/photoIcon.svg';
+import deleteFileIcon from '../assets/images/deleteFileIcon.svg';
+import uploadButtonIcon from '../assets/images/uploadButtonIcon.svg';
 import {
   Box,
   Typography,
@@ -104,6 +104,7 @@ const MUIComplaintForm = () => {
     formData.append('room_type', decodedData.room_type);
     formData.append('qr_data_from_qr', encodedData);
     formData.append('qr_signature_from_qr', signature);
+    formData.append('room', decodedData.id);
 
     files.forEach((file) => {
       formData.append('images', file);
