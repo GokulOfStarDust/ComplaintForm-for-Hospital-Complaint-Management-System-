@@ -6,8 +6,8 @@ function App() {
   return (
     <BrowserRouter>
           <Routes>
-          <Route path="/ComplaintForm" element={<MUIComplaintForm />} />
-          <Route path="/sessionExpired" element={<SessionExpired />} />
+            <Route path="/ComplaintForm" element={<MUIComplaintForm />} />
+            <Route path="/sessionExpired" element={<SessionExpired />} />
         </Routes>
       </BrowserRouter>
   )

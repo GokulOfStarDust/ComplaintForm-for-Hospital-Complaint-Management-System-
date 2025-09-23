@@ -142,7 +142,7 @@ const MUIComplaintForm = () => {
 
   const fetchIssueCategories = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}${ISSUE_CATEGORY_URL}`);
+      const response = await axios.get(`${BASE_URL}${ISSUE_CATEGORY_URL}?limit=100&offset=0`);
       const categories = response.data.results;
       setIssueCategories(categories);
       console.log('Issue Categories:', categories);
