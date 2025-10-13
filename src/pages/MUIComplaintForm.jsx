@@ -91,20 +91,16 @@ const MUIComplaintForm = () => {
 
   const formSubmitHandler = async (data) => {
     const formData = new FormData();
-    formData.append('room_number', decodedData.room_no);
-    formData.append('block', decodedData.Block);
-    formData.append('bed_number', decodedData.bed_no);
+
     formData.append('issue_type', data.issue_type);
     formData.append('priority', data.priority);
     formData.append('description', data.description);
-    formData.append('floor', decodedData.Floor_no);
-    formData.append('ward', decodedData.ward);
-    formData.append('room_status', decodedData.status);
-    formData.append('speciality', decodedData.speciality);
-    formData.append('room_type', decodedData.room_type);
+
     formData.append('qr_data_from_qr', encodedData);
     formData.append('qr_signature_from_qr', signature);
     formData.append('room', decodedData.id);
+
+    formData.append('phone_number', data.phone_number || '');
 
     files.forEach((file) => {
       formData.append('images', file);
@@ -392,6 +388,19 @@ const MUIComplaintForm = () => {
                   />
                 </FormControl>
               </Box>
+            </FormControl>
+
+            <FormControl sx={{ width: { xs: '90%', md: '55%' }, gap: 0.5 }}>
+              <FormLabel htmlFor="phone_number" sx={{ color: 'black' }}>
+                Phone number (optional)
+              </FormLabel>
+              <TextField
+                id="phone_number"
+                {...register('phone_number')}
+                error={!!errors.phone_number}
+                placeholder="Enter your phone number (+91 XXXXXXXXXX)"
+                sx={{ borderRadius: '4px' }}
+              />
             </FormControl>
 
             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
