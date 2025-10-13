@@ -398,7 +398,7 @@ const MUIComplaintForm = () => {
                 id="phone_number"
                 {...register('phone_number')}
                 error={!!errors.phone_number}
-                placeholder="Enter your phone number (+91 XXXXXXXXXX)"
+                placeholder="Enter your phone number (+91 XXXXXXXXXX) to receive complaint confirmation via SMS"
                 sx={{ borderRadius: '4px' }}
               />
             </FormControl>
