@@ -111,21 +111,21 @@ const ViewComplaint = () => {
           boxShadow: 1,
         }}
       >
-        <Typography variant="h6" sx={{ mb: 2, fontWeight: 'bold', color: '#202020' }}>
-          Fetch Complaint Details
+        <Typography variant="h4" sx={{ mb: 0.5, fontWeight: 'bold', color: '#202020' }}>
+          Fetch Your Complaint Details
         </Typography>
         <Typography variant="caption" color="text.secondary" sx={{ fontSize: '0.9rem' }}>
           Enter a Ticket ID below to view its details
         </Typography>
 
-        <Box component="form" onSubmit={handleFetchComplaint} sx={{ mt: 3, display: 'flex', flexDirection: 'column', gap: 2 }}>
-          <FormControl sx={{ width: '100%' }}>
-            <FormLabel htmlFor="ticketId" sx={{ color: 'black' }}>Ticket ID</FormLabel>
+        <Box component="form" onSubmit={handleFetchComplaint} sx={{ mt: 6, display: 'flex', flexDirection: 'column', gap: 6 }}>
+          <FormControl sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+            <FormLabel htmlFor="ticketId" sx={{ color: 'black', fontWeight: 'bold' }}>Ticket ID</FormLabel>
             <TextField
               id="ticketId"
               value={ticketId}
               onChange={(e) => setTicketId(e.target.value)}
-              placeholder="Enter Ticket ID"
+              placeholder="Enter Your Ticket ID"
               variant="outlined"
               sx={{ borderRadius: '4px', width: { xs: '100%', md: '70%' } }}
             />
@@ -141,7 +141,7 @@ const ViewComplaint = () => {
             type="submit"
             variant="contained"
             sx={{
-              width: { xs: '100%', md: '70%' },
+              width: { xs: '100%', md: '30%' },
               mt: 1,
               bgcolor: '#04B7B1',
               color: 'white',
